@@ -39,11 +39,12 @@ class Penjualan extends CI_Controller
       'id_masker' => $this->input->post('product_id'),
       'title' => $this->input->post('product_name'),
       'price' => $this->input->post('product_price'),
+      'stock' => $this->input->post('product_stock'),
       'qty' => $this->input->post('quantity'),
       'status'   => 1
     );
     $insert = $this->cart->insert($data);
-    $id_masker = $this->input->post('product_id');
+    $id_masker = $this->input->post('productid');
     $qty = $this->input->post('quantity');
     if ($insert == TRUE) {
       $this->penjualan_model->min_stock($qty, $id_masker);

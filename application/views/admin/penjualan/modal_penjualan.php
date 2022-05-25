@@ -13,6 +13,8 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Nama Masker</th>
+                                    <th>Harga Masker</th>
+                                    <th>Stok</th>
                                     <th>Jumlah</th>
                                     <th>Action</th>
                                 </tr>
@@ -23,16 +25,19 @@
                                     $id = $i['id_masker'];
                                     $title = $i['title'];
                                     $price = $i['price'];
+                                    $stock = $i['stock']
                                 ?>
                                     <tr>
                                         <td><?php echo $id; ?></td>
                                         <td><?php echo $title; ?></td>
+                                        <td><?php echo $price; ?></td>
+                                        <td><?php echo $stock; ?></td>
                                         <td>
                                             <input type="number" name="quantity" id="<?php echo $id; ?>" value="1" class="form-control" style="width: 65px;">
                                         </td>
                                         <td>
                                             <div style="width: 78px;">
-                                                <button class="add_cart btn btn-success btn-block" data-productid="<?php echo $id; ?>" data-productname="<?php echo $title; ?>" data-productprice="<?php echo $price; ?>"><i class="fa fa-cart-plus"></i> Add
+                                                <button class="add_cart btn btn-success btn-block" data-productid="<?php echo $id; ?>" data-productname="<?php echo $title; ?>" data-productprice="<?php echo $price; ?>" data-productstock="<?php echo $stock; ?>"><i class="fa fa-cart-plus"></i> Add
                                                 </button>
                                             </div>
                                         </td>
@@ -48,7 +53,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="showCustomer" role="dialog">
+<!-- <div class="modal fade" id="showCustomer" role="dialog">
     <div class="modal-dialog modal-lg">
         <form class="form-horizontal" action="" method="post">
             <div class="modal-content">
@@ -94,4 +99,4 @@
             </div>
         </form>
     </div>
-</div>
+</div> -->
