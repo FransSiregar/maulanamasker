@@ -10,7 +10,7 @@
                             </div>
                             <?php echo $this->session->flashdata('message') ?>
                             <div class="card-body">
-                                <form class="form" method="post" action="<?= base_url('User/index'); ?>">
+                                <form class="form" method="post" action="<?= base_url('User'); ?>">
                                     <div class="row mb-3">
                                         <div class="form-group">
                                             <label class="small mb-1" for="inputEmailAddress">Email</label>

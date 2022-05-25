@@ -29,17 +29,17 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $('.add_cart').click(function() {
-            var product_id = $(this).data("productid");
-            var product_name = $(this).data("productname");
-            var product_price = $(this).data("productprice");
+            var productid = $(this).data("productid");
+            var productname = $(this).data("productname");
+            var productprice = $(this).data("productprice");
             var quantity = $('#' + product_id).val();
             $.ajax({
                 url: "<?= base_url('Penjualan/add_to_cart'); ?>",
                 method: "POST",
                 data: {
-                    product_id: product_id,
-                    product_name: product_name,
-                    product_price: product_price,
+                    productid: productid,
+                    productname: productname,
+                    productprice: productprice,
                     quantity: quantity
                 },
 
@@ -52,7 +52,7 @@
         $('#detail_cart').load("<?= base_url('Penjualan/load_cart'); ?>");
 
         $(document).on('click', '.remove_cart', function() {
-            var row_id = $(this).attr("id");
+            var row_id = $(this).attr("id_masker");
             $.ajax({
                 url: "<?= base_url('Penjualan/delete_cart'); ?>",
                 method: "POST",

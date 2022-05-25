@@ -28,6 +28,22 @@
                                     <tr>
                                         <td><?php echo $id; ?></td>
                                         <td><?php echo $title; ?></td>
+                                        <?php
+                                        $temp = "";
+                                        foreach ($masker1->result_array() as $i) :
+                                            $id1 = $i['id_masker'];
+                                            $d_penjualan = $i['amount'];
+                                            if ($id == $id1) {
+                                                if ($temp != "") {
+                                                    $temp = $temp . ',
+                                                    &nbsp' . $d_penjualan;
+                                                } else {
+                                                    $temp = $d_penjualan;
+                                                }
+                                            }
+                                        endforeach;
+                                        ?>
+                                        <td> <?php echo $temp; ?></td>
                                         <td>
                                             <input type="number" name="quantity" id="<?php echo $id; ?>" value="1" class="form-control" style="width: 65px;">
                                         </td>

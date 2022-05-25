@@ -11,8 +11,8 @@
                                 <div class="card-body">
                                     <form form class="form" action="<?php echo base_url('user/registration'); ?>" method="post">
                                         <div class="form-floating mb-3">
-                                            <input class="form-control" id="name" name="name" type="text" value="<?= set_value('name'); ?>" placeholder="Enter fullname" />
-                                            <label for="inputName">Enter fullname</label>
+                                            <input class="form-control" id="name" name="name" type="text" value="<?= set_value('name'); ?>" placeholder="Enter Fullname" />
+                                            <label for="inputName">Enter Fullname</label>
                                             <?= form_error('name', '<small class="text-danger">', '</small>') ?>
                                         </div>
                                         <div class="form-floating mb-3">

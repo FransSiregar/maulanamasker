@@ -13,7 +13,6 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Nama Masker</th>
-                                    <th>Harga Masker</th>
                                     <th>Jumlah</th>
                                     <th>Action</th>
                                 </tr>
@@ -28,7 +27,6 @@
                                     <tr>
                                         <td><?php echo $id; ?></td>
                                         <td><?php echo $title; ?></td>
-                                        <td> <?php echo $price; ?></td>
                                         <td>
                                             <input type="number" name="quantity" id="<?php echo $id; ?>" value="1" class="form-control" style="width: 65px;">
                                         </td>
@@ -50,7 +48,7 @@
     </div>
 </div>
 
-<!-- <div class="modal fade" id="showCustomer" role="dialog">
+<div class="modal fade" id="showCustomer" role="dialog">
     <div class="modal-dialog modal-lg">
         <form class="form-horizontal" action="" method="post">
             <div class="modal-content">
@@ -96,4 +94,4 @@
             </div>
         </form>
     </div>
-</div> -->
+</div>

@@ -37,11 +37,12 @@
                                             <div class="row">
                                                 <label for="title" class="col-sm-5 control-label"> Nama User</label>
                                                 <div class="col-sm-6">
-                                                    <input type="text" class="form-control" data-employee="employee" value="<?php echo $this->session->userdata('name'); ?>" readonly>
+                                                    <input type="text" class="form-control" data-user="" value="<?php echo $this->session->userdata('name'); ?>" readonly>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="col-sm-1"></div>
                                     <div class="col-sm-3">
                                         <div class="form-group">
@@ -63,7 +64,7 @@
                             </button>
                         </div>
                     </div>
-                    <br></br>
+                    <br>
                     <div class="col-sm-12">
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped">
@@ -140,7 +141,7 @@
                                     </tr>
                                 </table>
                             </div> -->
-                            <br></br>
+                            <br>
                             <a class="btn btn-flat btn-lg btn-warning" href="<?= base_url('pembelian/clear_cart'); ?>"> Cancel </a>
                             <button class="process_payment btn btn-flat btn-lg btn-success floatright" data-kode_beli="<?= $kode_beli; ?>">
                                 Process Payment
@@ -151,15 +152,11 @@
             </main>
             <?php $this->load->view("admin/_partials/footer.php"); ?>
         </div>
-    </div><br>
-
-    <!-- The Modal -->
-    <div>
-        <?php $this->load->view("admin/pembelian/modal_pembelian.php"); ?>
-        <?php $this->load->view("admin/_partials/modal.php"); ?>
-        <?php $this->load->view("admin/_partials/jspembelian.php"); ?>
-        <?php $this->load->view("admin?_partials/js.php"); ?>
     </div>
+    <?php $this->load->view("admin/pembelian/modal_pembelian.php"); ?>
+    <?php $this->load->view("admin/_partials/jspembelian.php"); ?>
+    <?php $this->load->view("admin/_partials/modal.php"); ?>
+
 </body>
 
 </html>

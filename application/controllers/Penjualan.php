@@ -20,7 +20,7 @@ class Penjualan extends CI_Controller
         'level_id' => $this->Level_model->level_getById($id_level)->row(),
         'masker' => $this->Penjualan_model->masker_getAll(),
         'masker1' => $this->Penjualan_model->masker_getAll1(),
-        // 'masker2' => $this->Penjualan_model->masker_getAll2(),
+        'masker2' => $this->Penjualan_model->masker_getAll2(),
         'customer' => $this->Pelanggan_model->pelanggan_getAll(),
       );
       $this->load->view("admin/penjualan/v_penjualan", $data);
@@ -40,7 +40,7 @@ class Penjualan extends CI_Controller
       'title' => $this->input->post('product_name'),
       'price' => $this->input->post('product_price'),
       'qty' => $this->input->post('quantity'),
-      'status' => 1
+      'status'   => 1
     );
     $insert = $this->cart->insert($data);
     $id_masker = $this->input->post('product_id');

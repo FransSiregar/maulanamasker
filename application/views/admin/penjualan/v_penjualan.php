@@ -24,7 +24,7 @@
                                     <div class="col-sm-3">
                                         <div class="form-group">
                                             <div class="row">
-                                                <label for="title" class="col-sm-3 control-label" style="margin:auto;">Date</label>
+                                                <label for="title" class="col-sm-3 control-label">Date</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" data-sale_date="sale_date" class="form-control" value="<?= date("d-m-Y") ?>" readonly>
                                                 </div>
@@ -64,7 +64,7 @@
                             </button>
                         </div>
                     </div>
-                    <br><br>
+                    <br>
                     <div class="col-sm-12">
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped">
@@ -74,7 +74,6 @@
                                         <th>Nama Masker</th>
                                         <th>Harga Masker</th>
                                         <th>Jumlah</th>
-                                        <th>Total</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -152,14 +151,12 @@
             <?php $this->load->view("admin/_partials/footer.php"); ?>
         </div>
     </div><br>
-    </div>
-    </div>
-
+    <?php $this->load->view("admin/penjualan/modal_penjualan.php"); ?>
+    <?php $this->load->view("admin/_partials/jspenjualan.php"); ?>
+    <?php $this->load->view("admin/_partials/modal.php"); ?>
 </body>
-<?php $this->load->view("admin/penjualan/modal_penjualan.php"); ?>
-<?php $this->load->view("admin/_partials/jspenjualan.php"); ?>
-<?php $this->load->view("admin/_partials/modal.php"); ?>
-<?php $this->load->view("admin/_partials/js.php"); ?>
+
+
 
 
 </html>

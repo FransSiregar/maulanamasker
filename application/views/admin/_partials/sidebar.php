@@ -3,10 +3,6 @@
         <div class="nav <?php echo $this->uri->segment(2) == '' ? 'active' : '' ?>">
             <a class="nav-link" href="<?php echo base_url('Overview') ?>">
             </a>
-            <div class="sb-sidenav-footer">
-                <div class="small">Logged in as : <?= $this->session->userdata['name']; ?></div>
-
-            </div>
             <div class="sb-sidenav-menu-heading text-success">Transaksi</div>
             <a class="nav-link" href="<?= base_url("Penjualan") ?>">
                 <div class="sb-nav-link-icon"><i class="fas fa-balance-scale"></i></div>
@@ -54,8 +50,17 @@
                     </a>
                     <a class="nav-link" href="<?php echo site_url('Pelanggan') ?>">Pengelolaan Data Pelanggan
                     </a>
+
                     <a class="nav-link" href="<?php echo site_url('Level') ?>">Pengelolaan Level
                     </a>
                 </nav>
             </div>
+        </div>
+    </div>
+    <div class="sb-sidenav-footer">
+        <i class="fas fa-user fa-fw"></i>
+        <div class="">Logged in as : <?= $this->session->userdata['name']; ?></div>
+
+    </div>
+
 </nav>

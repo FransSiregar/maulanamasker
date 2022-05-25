@@ -11,15 +11,15 @@ class Penjualan_model extends CI_Model
 
     public function masker_getAll1()
     {
-        $query = $this->db->query("SELECT * FROM masker INNER JOIN masker_user ON masker.id_masker=masker_user.id_masker INNER JOIN user ON masker_user.id_user=user.id_user");
+        $query = $this->db->query("SELECT * FROM masker INNER JOIN masker_dpenjualan ON masker.id_masker=masker_dpenjualan.id_masker INNER JOIN d_penjualan ON masker_dpenjualan.d_penjualan_id=d_penjualan.d_penjualan_id");
         return $query;
     }
 
-    // public function masker_getAll2()
-    // {
-    //     $query = $this->db->query("SELECT * FROM masker INNER JOIN masker_maskercat ON masker.masker_id=masker_maskercat.masker_id INNER JOIN masker_category ON masker_maskercat.masker_category_id=masker_category.masker_category_id");
-    //     return $query;
-    // }
+    public function masker_getAll2()
+    {
+        $query = $this->db->query("SELECT * FROM masker INNER JOIN masker_maskercat ON masker.masker_id=masker_maskercat.masker_id INNER JOIN masker_category ON masker_maskercat.masker_category_id=masker_category.masker_category_id");
+        return $query;
+    }
 
     public function masker_getById($id)
     {

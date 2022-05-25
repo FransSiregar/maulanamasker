@@ -16,7 +16,7 @@
                 HaLaman Utama
             </main>
             <?php $this->load->view("admin/_partials/footer.php"); ?>
-        </div>s
+        </div>
     </div>
     <?php $this->load->view("admin/_partials/modal.php"); ?>
     <?php $this->load->view("admin/_partials/js.php"); ?>
