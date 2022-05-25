@@ -1,4 +1,4 @@
-<div class="modal fade" id="show_buku" role="dialog">
+<div class="modal fade" id="show_masker" role="dialog">
     <div class="modal-dialog modal-lg">
         <form class="form-horizontal" action="" method="post">
             <div class="modal-content">
@@ -21,44 +21,13 @@
                             <tbody>
                                 <?php
                                 foreach ($book->result_array() as $i) :
-                                    $id = $i['book_id'];
+                                    $id = $i['masker_id'];
                                     $title = $i['title'];
                                     $price = $i['price'];
-                                    $discount = $i['discount'];
                                 ?>
                                     <tr>
                                         <td><?php echo $id; ?></td>
                                         <td><?php echo $title; ?></td>
-                                        <?php
-                                        $temp = "";
-                                        foreach ($book1->result_array() as $i) :
-                                            $id1 = $i['id_masker'];
-                                            if ($id == $id1) {
-                                                if ($temp != "") {
-                                                    $temp = $temp . ',
-                                                    &nbsp' . $author;
-                                                } else {
-                                                    $temp = $author;
-                                                }
-                                            }
-                                        endforeach;
-                                        ?>
-                                        <td> <?php echo $temp; ?></td>
-                                        <?php
-                                        $temp = "";
-                                        foreach ($book2->result_array() as $i) :
-                                            $id1 = $i['id_masker'];
-                                            if ($id == $id1) {
-                                                if ($temp != "") {
-                                                    $temp = $temp . ',
-                                                    &nbsp' . $bookcategory;
-                                                } else {
-                                                    $temp = $bookcategory;
-                                                }
-                                            }
-                                        endforeach;
-                                        ?>
-                                        <td><?php echo $temp; ?></td>
                                         <td>
                                             <input type="number" name="quantity" id="<?php echo $id; ?>" value="1" class="form-control" style="width: 65px;">
                                         </td>

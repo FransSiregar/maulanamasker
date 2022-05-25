@@ -58,18 +58,19 @@
                         </div>
                         <div class="col-sm-1"></div>
                         <div class="col-sm-2">
-                            <button class="col-sm-12 btn btn-info btn-flat" data-bs-toggle="modal" data-bs-target="#show_buku">
+                            <button class="col-sm-12 btn btn-info btn-flat" data-bs-toggle="modal" data-bs-target="#show_masker">
                                 <i class="fa fa-search"></i>Pilih Buku
                             </button>
                         </div>
                     </div>
+                    <br></br>
                     <div class="col-sm-12">
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Book Id</th>
-                                        <th>Book Name</th>
+                                        <th>Masker Id</th>
+                                        <th>Masker Name</th>
                                         <th>Price</th>
                                         <th>Qty</th>
                                         <th>Total</th>
@@ -106,7 +107,7 @@
                             <Form method="post" name='autoSumForm'>
                                 <div class="form-group">
                                     <div class="row">
-                                        <label for="title" class="perhitungan col-sm-4 controllabel">Cash</label>
+                                        <label for="title" class="perhitungan col-sm-4 controllabel">Uang</label>
                                         <div class="col-sm-8">
                                             <input type="number" class="form-control" name='Uang_Pembayaran' size='23' onFocus="startCalc();" onBlur="stopCalc();" />
                                         </div>
@@ -114,14 +115,14 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="row">
-                                        <label for="title" class="col-sm-4 control-label">Change</label>
+                                        <label for="title" class="col-sm-4 control-label">Kembalian</label>
                                         <div class="col-sm-8">
                                             <input type="number" class="form-control" value='0' name="Kembalian" onchange='tryNumberFormat(this.form);' readonly>
                                         </div>
                                     </div>
                                 </div>
                             </form>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <table>
                                     <tr>
                                         <td width="50%">
@@ -138,8 +139,9 @@
                                         </td>
                                     </tr>
                                 </table>
-                            </div>
-                            <a class="btn btn-flat btn-lg btn-warning" href="<?= base_url('admin/pembelian/clear_cart'); ?>"> Cancel </a>
+                            </div> -->
+                            <br></br>
+                            <a class="btn btn-flat btn-lg btn-warning" href="<?= base_url('pembelian/clear_cart'); ?>"> Cancel </a>
                             <button class="process_payment btn btn-flat btn-lg btn-success floatright" data-kode_beli="<?= $kode_beli; ?>">
                                 Process Payment
                             </button>
@@ -147,14 +149,16 @@
                     </div>
                 </div>
             </main>
+            <?php $this->load->view("admin/_partials/footer.php"); ?>
         </div>
     </div><br>
-    <?php $this->load->view("admin/_partials/footer.php"); ?>
+
     <!-- The Modal -->
     <div>
         <?php $this->load->view("admin/pembelian/modal_pembelian.php"); ?>
         <?php $this->load->view("admin/_partials/modal.php"); ?>
         <?php $this->load->view("admin/_partials/jspembelian.php"); ?>
+        <?php $this->load->view("admin?_partials/js.php"); ?>
     </div>
 </body>
 

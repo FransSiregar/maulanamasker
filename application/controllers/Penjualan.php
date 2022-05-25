@@ -36,8 +36,8 @@ class Penjualan extends CI_Controller
   function add_to_cart()
   {
     $data = array(
-      'id' => $this->input->post('product_id'),
-      'name' => $this->input->post('product_name'),
+      'id_masker' => $this->input->post('product_id'),
+      'title' => $this->input->post('product_name'),
       'price' => $this->input->post('product_price'),
       'qty' => $this->input->post('quantity'),
       'status' => 1

@@ -174,7 +174,7 @@ class Pembelian extends CI_Controller
 
     public function list_pembelian()
     {
-        if ($this->session->userdata('id_user') != Null) {
+        if ($this->session->userdata('level_id') == 1 || ($this->session->userdata('level_id'))) {
             $id = $this->session->userdata('level_id');
             $data = array(
                 'user_level' => $this->Level_model->level_getById($id)->row(),
@@ -182,6 +182,9 @@ class Pembelian extends CI_Controller
                 'pembelian1' => $this->Pembelian_model->pembelian_getAll1(),
             );
             $this->load->view('admin/pembelian/v_Laporan', $data);
+        } elseif ($this->session->userdata('id') != NULL) {
+            echo '<script language=JavaScript>alert("Anda Tidak memiliki akses")
+            onclick=location.href="Overview"</script>';
         } else {
             echo '<script language=JavaScript>alert("Anda Belum Login, Silahkan Login")
             onclick=location.href="../User"</script>';

@@ -33,7 +33,7 @@
             var product_discount = $(this).data("productdiscount");
             var quantity = $('#' + product_id).val();
             $.ajax({
-                url: "<?= base_url('admin/pembelian/add_to_cart'); ?>",
+                url: "<?= base_url('pembelian/add_to_cart'); ?>",
                 method: "POST",
                 data: {
                     product_id: product_id,
@@ -47,13 +47,13 @@
                 }
             });
         });
-        $('#detail_cart').load("<?= base_url('admin/pembelian/load_cart'); ?>");
+        $('#detail_cart').load("<?= base_url('pembelian/load_cart'); ?>");
 
         $(document).on('click', '.remove_cart', function() {
             var row_id = $(this).attr("id");
 
             $.ajax({
-                url: "<?= base_url('admin/pembelian/delete_cart'); ?>",
+                url: "<?= base_url('pembelian/delete_cart'); ?>",
                 method: "POST",
                 data: {
                     row_id: row_id

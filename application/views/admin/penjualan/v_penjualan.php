@@ -64,6 +64,7 @@
                             </button>
                         </div>
                     </div>
+                    <br><br>
                     <div class="col-sm-12">
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped">
@@ -138,6 +139,7 @@
                                     </tr>
                                 </table>
                             </div> -->
+                            <br></br>
                             <a class="btn btn-flat btn-lg btn-warning" href="<?= base_url('Penjualan/clear_cart'); ?>"> Cancel
                             </a>
                             <button class="process_payment btn btn-flat btn-lg btn-success floatright" data-kode_jual="<?= $kode_jual; ?>">
@@ -157,5 +159,7 @@
 <?php $this->load->view("admin/penjualan/modal_penjualan.php"); ?>
 <?php $this->load->view("admin/_partials/jspenjualan.php"); ?>
 <?php $this->load->view("admin/_partials/modal.php"); ?>
+<?php $this->load->view("admin/_partials/js.php"); ?>
+
 
 </html>
