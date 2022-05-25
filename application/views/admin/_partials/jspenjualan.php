@@ -29,20 +29,20 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $('.add_cart').click(function() {
-            var productid = $(this).data("product_id");
-            var productname = $(this).data("product_name");
-            var productprice = $(this).data("product_price");
-            var productstock = $(this).data("product_stock");
+            var product_id = $(this).data("productid");
+            var product_name = $(this).data("productname");
+            var product_price = $(this).data("productprice");
+            var product_stock = $(this).data("productstock");
             var quantity = $('#' + product_id).val();
             $.ajax({
                 url: "<?= base_url('Penjualan/add_to_cart'); ?>",
                 method: "POST",
                 data: {
-                    product_id: productid,
-                    product_name: productname,
-                    product_price: productprice,
-                    product_stock: productstock,
-                    qty: quantity
+                    product_id: product_id,
+                    product_name: productn_name,
+                    product_price: product_price,
+                    product_stock: product_stock,
+                    quantity: quantity
                 },
 
                 success: function(data) {
