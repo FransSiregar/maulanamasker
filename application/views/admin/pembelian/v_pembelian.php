@@ -16,7 +16,7 @@
             <main>
                 <div class="container-fluid">
                     <h1 class="mt-4">Transaksi Pembelian</h1>
-                    <?php $this->load->view("admin/_partials/breadcrumb.php"); ?>
+                    <br>
                     <div class="row">
                         <div class="col-sm-9">
                             <form class="form-horizontal" action="" method="post">
