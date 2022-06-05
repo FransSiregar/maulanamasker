@@ -33,7 +33,7 @@
                                         <td><?php echo $price; ?></td>
                                         <td><?php echo $stock; ?></td>
                                         <td>
-                                            <input type="number" name="quantity" id="<?php echo $id; ?>" value="1" class="form-control" style="width: 65px;">
+                                            <input type="number" name="quantity" id="quantity" value="1" class="form-control" style="width: 65px;">
                                         </td>
                                         <td>
                                             <div style="width: 78px;">

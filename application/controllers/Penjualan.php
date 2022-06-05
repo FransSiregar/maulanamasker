@@ -36,10 +36,10 @@ class Penjualan extends CI_Controller
   function add_to_cart()
   {
     $data = array(
-      'id_masker' => $this->input->post('product_id'),
-      'title' => $this->input->post('product_name'),
-      'price' => $this->input->post('product_price'),
-      'stock' => $this->input->post('product_stock'),
+      'id_masker' => $this->input->post('productid'),
+      'title' => $this->input->post('productname'),
+      'price' => $this->input->post('productprice'),
+      'stock' => $this->input->post('productstock'),
       'qty' => $this->input->post('quantity'),
       'status'   => 1
     );
@@ -63,8 +63,8 @@ class Penjualan extends CI_Controller
         $no++;
         $output .= '
         <tr>
-        <td>' . number_format($items['id_masker']) . '</td>
-        <td>' . $items['nama_masker'] . '</td>
+        <td>' . number_format($items['id']) . '</td>
+        <td>' . $items['title'] . '</td>
         <td>' . number_format($items['price']) . '</td>
         <td>' . number_format($items['qty']) . '</td>
         <td>' . number_format($items['subtotal']) . '</td>

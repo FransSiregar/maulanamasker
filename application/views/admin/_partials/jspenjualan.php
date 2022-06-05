@@ -38,10 +38,10 @@
                 url: "<?= base_url('Penjualan/add_to_cart'); ?>",
                 method: "POST",
                 data: {
-                    product_id: product_id,
-                    product_name: productn_name,
-                    product_price: product_price,
-                    product_stock: product_stock,
+                    productid: product_id,
+                    productname: productn_name,
+                    productprice: product_price,
+                    productstock: product_stock,
                     quantity: quantity
                 },
 
