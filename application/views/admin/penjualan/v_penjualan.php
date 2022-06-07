@@ -49,7 +49,7 @@
                                             <div class="row">
                                                 <label for="title" class="col-sm-4 control-label">Level</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control" data-user="user" value="<?= $level_id->name; ?>" readonly>
+                                                    <input type="text" class="form-control" data-user="user" value="<?= $user_level->name; ?>" readonly>
                                                 </div>
                                             </div>
                                         </div>
@@ -74,11 +74,13 @@
                                         <th>Nama Masker</th>
                                         <th>Harga Masker</th>
                                         <th>Jumlah</th>
+                                        <th>Total</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <!--Prototype-->
-                                <tbody id="detail_cart"></tbody>
+                                <tbody id="detail_cart">
+                                </tbody>
                                 <!--END Prototype-->
                             </table>
                         </div>
@@ -121,23 +123,6 @@
                                     </div>
                                 </div>
                             </form>
-                            <!-- <div class="form-group">
-                                <table>
-                                    <tr>
-                                        <td width="50%">
-                                            <label for="title">Pelanggan</label>
-                                        </td>
-                                        <td>
-                                            <input type="hidden" class="form-control" name="id_pelanggan" id="id_pelanggan">
-                                        </td>
-                                        <td>
-                                            <button class="add_pelanggan btn btn-info btn-flat" data-bs-toggle="modal" data-bs-target="#showCustomer">
-                                                <i class="fa fa-search"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div> -->
                             <br></br>
                             <a class="btn btn-flat btn-lg btn-warning" href="<?= base_url('Penjualan/clear_cart'); ?>"> Cancel
                             </a>

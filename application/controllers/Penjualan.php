@@ -13,18 +13,16 @@ class Penjualan extends CI_Controller
   public function index()
   {
     if ($this->session->userdata('level_id') == 1 || ($this->session->userdata('level_id') == 3)) {
-      $id_level = $this->session->userdata('level_id');
+      $id = $this->session->userdata('level_id');
       $data = array(
         'kode_jual' => $this->Penjualan_model->invoice_no(),
         'total' => $this->show_total(),
-        'level_id' => $this->Level_model->level_getById($id_level)->row(),
+        'user_level' => $this->Level_model->level_getById($id)->row(),
         'masker' => $this->Penjualan_model->masker_getAll(),
-        'masker1' => $this->Penjualan_model->masker_getAll1(),
-        'masker2' => $this->Penjualan_model->masker_getAll2(),
-        'customer' => $this->Pelanggan_model->pelanggan_getAll(),
+        'pelanggan' => $this->Pelanggan_model->pelanggan_getAll(),
       );
       $this->load->view("admin/penjualan/v_penjualan", $data);
-    } elseif ($this->session->userdata('level_id') != null) {
+    } elseif ($this->session->userdata('user_level') != null) {
       echo '<script language=JavaScript>alert("Anda Tidak memiliki akses")
             onclick=location.href="Overview"</script>';
     } else {
@@ -36,18 +34,18 @@ class Penjualan extends CI_Controller
   function add_to_cart()
   {
     $data = array(
-      'id_masker' => $this->input->post('productid'),
-      'title' => $this->input->post('productname'),
-      'price' => $this->input->post('productprice'),
-      'stock' => $this->input->post('productstock'),
+      'id' => $this->input->post('product_id'),
+      'name' => $this->input->post('product_name'),
+      'price' => $this->input->post('product_price'),
       'qty' => $this->input->post('quantity'),
-      'status'   => 1
+      'stock' => $this->input->post('product_stock'),
+      'status' => 1
     );
     $insert = $this->cart->insert($data);
-    $id_masker = $this->input->post('productid');
+    $id_masker = $this->input->post('product_id');
     $qty = $this->input->post('quantity');
     if ($insert == TRUE) {
-      $this->penjualan_model->min_stock($qty, $id_masker);
+      $this->Penjualan_model->min_stock($qty, $id_masker);
     } else {
       echo '<script language=JavaScript>alert("Fail add to cart")</script>';
     }
@@ -64,7 +62,7 @@ class Penjualan extends CI_Controller
         $output .= '
         <tr>
         <td>' . number_format($items['id']) . '</td>
-        <td>' . $items['title'] . '</td>
+        <td>' . $items['name'] . '</td>
         <td>' . number_format($items['price']) . '</td>
         <td>' . number_format($items['qty']) . '</td>
         <td>' . number_format($items['subtotal']) . '</td>
@@ -105,10 +103,10 @@ class Penjualan extends CI_Controller
     $row_id = $this->input->post('row_id');
     foreach ($this->cart->contents() as $items) {
       $row_id1 = $items['rowid'];
-      $masker_id = $items['id'];
+      $id_masker = $items['id'];
       $qty = $items['qty'];
       if ($row_id == $row_id1) {
-        $this->Penjualan_model->plus_stock($qty, $masker_id);
+        $this->Penjualan_model->plus_stock($qty, $id_masker);
         $data = array(
           'rowid' => $this->input->post('row_id'),
           'qty' => 0,
@@ -132,9 +130,9 @@ class Penjualan extends CI_Controller
   function clear_cart()
   {
     foreach ($this->cart->contents() as $items) {
-      $masker_id = $items['id'];
+      $id_masker = $items['id'];
       $qty = $items['qty'];
-      $this->Penjualan_model->plus_stock($qty, $masker_id);
+      $this->Penjualan_model->plus_stock($qty, $id_masker);
     }
     echo $this->cart->destroy();
     echo '<script language=JavaScript>alert("Clearing the Cart...")
@@ -146,27 +144,26 @@ class Penjualan extends CI_Controller
     $kode_jual = $this->input->post('kode_jual');
     date_default_timezone_set('Asia/Jakarta');
     $sale_date = date("Y-m-d H:i:s");
-    $member = $this->input->post('customer');
     $data = array(
       'kode_jual' => $kode_jual,
-      'user_id' => $this->session->userdata('user_id'),
+      'id_user' => $this->session->userdata('id_user'),
       'sale_date' => $sale_date,
-      'customer_id' => $member
     );
     $this->Penjualan_model->penjualan_insert('penjualan', $data);
 
     foreach ($this->cart->contents() as $items) {
-      $masker_id = number_format($items['id']);
+      $id_masker = number_format($items['id']);
       $qty = number_format($items['qty']);
       $sub_total = $items['subtotal'];
       $status = $items['status'];
       if ($status == 1) {
         // Input Array
         $data = array(
-          'id_masker' => $masker_id,
+          'id_masker' => $id_masker,
           'amount' => $qty,
-          'penjualan_id' => $this->Penjualan_model->penjualan_last_id()->penjualan_id,
-          'total_price' => $sub_total
+          'total_price' => $sub_total,
+          'penjualan_id' => $this->Penjualan_model->penjualan_last_id()->penjualan_id
+
         );
         $this->Penjualan_model->d_penjualan_insert('d_penjualan', $data);
       }

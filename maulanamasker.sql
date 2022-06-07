@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2022 at 04:31 PM
+-- Generation Time: Jun 06, 2022 at 08:48 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -88,8 +88,7 @@ CREATE TABLE `masker` (
 --
 
 INSERT INTO `masker` (`id_masker`, `title`, `price`, `stock`) VALUES
-(1, 'Medis', 40000, 20),
-(2, 'Firo', 50000, 40);
+(1, 'Medis', 50000, 36);
 
 -- --------------------------------------------------------
 
@@ -277,7 +276,7 @@ ALTER TABLE `level`
 -- AUTO_INCREMENT for table `masker`
 --
 ALTER TABLE `masker`
-  MODIFY `id_masker` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_masker` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pelanggan`

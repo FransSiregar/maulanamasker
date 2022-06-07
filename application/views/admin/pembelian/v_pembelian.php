@@ -49,7 +49,7 @@
                                             <div class="row">
                                                 <label for="title" class="col-sm-4 control-label">Level</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control" data-employee="employee" value="<?= $user_level->name; ?>" readonly>
+                                                    <input type="text" class="form-control" data-user="user" value="<?= $user_level->name; ?>" readonly>
                                                 </div>
                                             </div>
                                         </div>
@@ -123,7 +123,7 @@
                                     </div>
                                 </div>
                             </form>
-                            <!-- <div class="form-group">
+                            <div class="form-group">
                                 <table>
                                     <tr>
                                         <td width="50%">
@@ -140,7 +140,7 @@
                                         </td>
                                     </tr>
                                 </table>
-                            </div> -->
+                            </div>
                             <br>
                             <a class="btn btn-flat btn-lg btn-warning" href="<?= base_url('pembelian/clear_cart'); ?>"> Cancel </a>
                             <button class="process_payment btn btn-flat btn-lg btn-success floatright" data-kode_beli="<?= $kode_beli; ?>">

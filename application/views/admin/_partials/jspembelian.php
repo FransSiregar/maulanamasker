@@ -30,7 +30,6 @@
             var product_id = $(this).data("productid");
             var product_name = $(this).data("productname");
             var product_price = $(this).data("productprice");
-            var product_discount = $(this).data("productdiscount");
             var quantity = $('#' + product_id).val();
             $.ajax({
                 url: "<?= base_url('pembelian/add_to_cart'); ?>",
@@ -39,7 +38,6 @@
                     product_id: product_id,
                     product_name: product_name,
                     product_price: product_price,
-                    product_discount: product_discount,
                     quantity: quantity
                 },
                 success: function(data) {

@@ -38,10 +38,10 @@
                 url: "<?= base_url('Penjualan/add_to_cart'); ?>",
                 method: "POST",
                 data: {
-                    productid: product_id,
-                    productname: productn_name,
-                    productprice: product_price,
-                    productstock: product_stock,
+                    product_id: product_id,
+                    product_name: product_name,
+                    product_price: product_price,
+                    product_stock: product_stock,
                     quantity: quantity
                 },
 
@@ -90,7 +90,7 @@
             var kode_jual = $(this).data("kode_jual");
             var customer = document.getElementById('id_customer').value;
             $.ajax({
-                url: "<?php echo site_url('admin/Penjualan/add_penjualan'); ?>",
+                url: "<?php echo site_url('Penjualan/add_penjualan'); ?>",
                 method: "POST",
                 data: {
                     kode_jual: kode_jual,
